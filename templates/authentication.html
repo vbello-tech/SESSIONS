@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Authentication</h2>
+This API uses DRF default token authentication method. An access token is required to inorder to perform operations on some endpoints.
+
+<div>
+    <h3>SIGN UP (register new user)</h3>
+    endpoint: http://127.0.0.1:8000/user/signup/
+    Requires a valid username, email, password, and a matching password2.
+
+    <b>Request http method=POST</b>
+
+    <h4>sample request</h4>
+    curl --location 'http://127.0.0.1:8000/user/signup/' \
+    --data-raw '{
+        "username": "sessionlord",
+        "email": "sessionlord@yahoo.com",
+        "password": "lord023sess",
+        "password2": "lord023sess",
+    }'
+
+    <h4>sample response</h4>
+    {
+        "response": "Sucessfully created an account",
+        "username": "demoladele",
+        "token": "4d3be3188d488563604dbe85c554b0bf45178994"
+    }
+    register user and creates auth token.
+</div>
+
+<div>
+    <h3>LOGIN (login registered user)</h3>
+    endpoint: http://127.0.0.1:8000/user/login/
+    Requires a valid username, password.
+
+    <b>Request http method=POST</b>
+
+    <h4>sample request</h4>
+    curl --location 'http://127.0.0.1:8000/user/login/' \
+    --data-raw '{
+        "username": "sessionlord",
+        "password": "lord023sess",
+    }'
+
+    <h4>sample response</h4>
+    {
+        "token": "9b6610887d1d213f1e27071f49948e01cd77073f"
+    }
+</div>
+
+</body>
+</html>

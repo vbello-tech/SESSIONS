@@ -1,0 +1,19 @@
+UN = sessionlord
+PW = lord023sess
+
+
+business = Business.objects.create(
+            name = input_data.name,
+            image = input_data.image,
+            description = input_data.description,
+            category = input_data.category,
+            phone = input_data.phone,
+            city = input_data.city,
+            address = input_data.adddress,
+        )
+
+        return Response({
+            "message": "Business registered successfully",
+            "name": business.name,
+            "active": business.active,
+        }, status=status.HTTP_200_OK)
