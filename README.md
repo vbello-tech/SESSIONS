@@ -14,29 +14,29 @@ Project Stack
 
 -   Django
 -   Django RestFramework
--   PostgreSQL Database 
+-   Django default db.sqlite3 Database 
 
 
 Installation
 ------------
 
-Here are the steps to install and set up the Homemix real estate API project locally:
+Here are the steps to install and set up the SESSIONS API project locally:
 
 1. Clone the repository: First, you will need to clone the Homemix repository to your local machine. This can be done using the following command in your terminal or command prompt:
     ```bash
-    git clone https://github.com/[your-username]/sessions.git
+    git clone https://github.com/your_user_name/SESSIONS.git
     ```
 2. Create a virtual environment: It is recommended to work with a virtual environment to keep the dependencies for this project separate from other projects on your system. To create a virtual environment, run the following command:
     ```bash
-    python -m venv homemix-env
+    python -m venv Sessions-env
     ```
     Activate the virtual environment by running the following command:
     ```bash
-    source homemix-env/bin/activate (for Mac or Linux)
+    source Sessions-env/bin/activate (for Mac or Linux)
     ```
 
     ```bash
-    source homemix-env\Scripts\activate (for Windows)
+    source Sessions-env\Scripts\activate (for Windows)
     ```
 3. Install dependencies: Next, you will need to install the dependencies required for the project. These dependencies are listed in the requirements.txt file. To install them, run the following command:
     ```bash
