@@ -18,13 +18,6 @@ class BusinessCreateViewSet(viewsets.ModelViewSet):
     serializer_class = BusinessSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_permissions(self):
-        return super().get_permissions()
-
-
-    def get_serializer_class(self):
-        return super().get_serializer_class()
-
     def perform_create(self, serializer):
         serializer.save(admin=self.request.user, code=code())
         return super().perform_create(serializer)
