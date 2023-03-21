@@ -3,6 +3,7 @@ from django.conf import settings
 import random, string
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.translation import gettext_lazy as _
+from location_field.models.plain import PlainLocationField
 
 
 # Create your models here.
@@ -29,7 +30,8 @@ class Business(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)#date business was registered
     banned_date = models.DateTimeField(blank=True, null=True)#date business active status was changed to false
     phone = PhoneNumberField(blank=True, null=True)
-    city = models.CharField(max_length=30, blank=True, null=True)#business city
+    city = models.CharField(max_length=255)#business city
+    location = PlainLocationField(blank=True, null=True, based_fields=['city'], zoom=7)
     address = models.CharField(max_length=100, blank=True, null=True)#business address
     code = models.SlugField(blank=True, null=True, unique=True)#unique business code for each business
 
