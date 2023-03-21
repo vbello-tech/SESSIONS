@@ -66,6 +66,20 @@ def booksession(request, pk):
 
 @api_view(['POST'])
 @permission_classes((IsAuthenticated,))
+def add_when(request, pk):
+    # business logged in user would book a session with
+    data = request.data()
+    business = get_object_or_404(Business, pk=pk, active=True)
+    business.time = data.time
+    business.day = data.day
+    business.type = data.type
+    business.save()
+    return Response ({
+        'message': f'you have opened a session with {business.name}',
+    })
+
+@api_view(['POST'])
+@permission_classes((IsAuthenticated,))
 def accept_session(request, pk):
     logged_in_user = request.user
     bookedsession = get_object_or_404(
@@ -83,6 +97,7 @@ def accept_session(request, pk):
         return Response({
             'message': f'You are not the admin of {bookedsession.business.name}',
         })
+
 
 @api_view(['POST'])
 @permission_classes((IsAuthenticated,))

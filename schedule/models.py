@@ -6,8 +6,16 @@ from business.models import Business
 
 
 class BookedSession(models.Model):
+    class Type(models.TextChoices):
+        RENTED = 'rented', 'Rented',
+        SOLD = 'sold', 'Sold',
+        AVAILABLE = 'available', 'Available'
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="business_admin", blank=True, null=True, on_delete=models.CASCADE)
+    day = models.DateField(blank=True, null=True)
+    time = models.TimeField(blank=True, null=True)
+    type = models.CharField(max_length=9, choices=Type.choices)
     business = models.ForeignKey(Business, on_delete=models.CASCADE, blank=True, null=True)
     opened = models.BooleanField(default=False, blank=True, null=True)
     user_closed = models.BooleanField(default=False, blank=True, null=True)

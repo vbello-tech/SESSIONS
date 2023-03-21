@@ -3,6 +3,7 @@ from .views import *
 
 urlpatterns = [
     path('book/<int:pk>/', booksession, name="booksession"),
+    path('add_when/<int:pk>/', booksession, name="when"),
     path('accept/<int:pk>/', booksession, name="acceptsession"),
     path('decline/<int:pk>/', booksession, name="declinesession"),
     path('user-close/<int:pk>/', booksession, name="user_close_session"),
