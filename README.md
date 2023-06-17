@@ -1,4 +1,4 @@
-SESSIONS- A SESSION SCHEDULING API (ONGOING PROJECT).
+SESSIONS- A SESSION SCHEDULING API.
 ========
 
 SESSIONS is a RESTful API that enables users to schedule sessions with business owners that has registered their business on our database.

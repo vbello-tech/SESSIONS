@@ -17,6 +17,7 @@ This API uses DRF default token authentication method. An access token is requir
     <b>Request http method=POST</b>
 
     <h4>sample request</h4>
+    ```
     curl --location 'http://127.0.0.1:8000/user/signup/' \
     --data-raw '{
         "username": "sessionlord",
@@ -24,7 +25,7 @@ This API uses DRF default token authentication method. An access token is requir
         "password": "lord023sess",
         "password2": "lord023sess",
     }'
-
+```
     <h4>sample response</h4>
     {
         "response": "Sucessfully created an account",
